@@ -25,7 +25,6 @@ ctx.drawImage(BadTowerImg,128-32,480-32);
 ctx.drawImage(SlimeTowerImg,640-64,480-64);
 ctx.drawImage(SlimeImg,cursor.x,cursor.y);
 }
-}
 // 執行 draw 函式
 // draw();
 setInterval(draw,16);
