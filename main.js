@@ -2,8 +2,8 @@ var cursor = {x:0, y:0};
 $("#game-canvas").mousemove( function(event) {
 console.log("x:"+event.pageX+",y:"+event.pageY);
 });
-setInterval(cursor.x=event.pageX);
-setInterval(cursor.y=event.pageY);
+cursor.x=event.pageX;
+cursor.y=event.pageY;
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
