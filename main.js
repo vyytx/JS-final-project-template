@@ -17,4 +17,4 @@ ctx.drawImage(SlimeImg,0,0);
 }
 // 執行 draw 函式
 // draw();
-setTimeout( draw, 1000);
+setInterval(draw,1);
