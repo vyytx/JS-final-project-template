@@ -3,8 +3,8 @@
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
 var slime ={
-  x = 0 ;
-  y = 0;
+  x : 128;
+  y : 480;
 };
 // 設定這個元素的要顯示的圖片
 bgImg.src = "images/map.png";
