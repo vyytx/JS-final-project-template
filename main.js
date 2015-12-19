@@ -16,5 +16,5 @@ ctx.drawImage(bgImg,0,0);
 ctx.drawImage(SlimeImg,0,0);
 }
 // 執行 draw 函式
-draw();
+// draw();
 setTimeout( draw, 1000);
