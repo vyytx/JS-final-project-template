@@ -1,4 +1,6 @@
+var IsBuilding = false;
 var cursor = {x:0, y:0};
+$(#game-canvas)
 $("#game-canvas").mousemove( function(event) {
 console.log("x:"+event.pageX+",y:"+event.pageY);
 cursor.x=event.pageX;
