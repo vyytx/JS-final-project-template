@@ -1,7 +1,9 @@
+var cursor = {x:0, y:0};
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
 var SlimeTowerImg = document.createElement("img");
+var BadTowerImg = document.createElement("img");
 // var slime ={
 //   x : 128;
 //   y : 480;
@@ -10,6 +12,7 @@ var SlimeTowerImg = document.createElement("img");
 bgImg.src = "images/map.png";
 SlimeImg.src = "images/slime.gif";
 SlimeTowerImg.src = "images/tower-btn.png";
+BadTowerImg.src = "images/tower.png";
 // 找出網頁中的 canvas 元素
 var canvas = document.getElementById("game-canvas");
 
@@ -18,8 +21,10 @@ var ctx = canvas.getContext("2d");
 function draw(){
 // 將背景圖片畫在 canvas 上的 (0,0) 位置
 ctx.drawImage(bgImg,0,0);
-ctx.drawImage(SlimeImg,128-32,480-32);
+ctx.drawImage(BadTowerImg,128-32,480-32);
 ctx.drawImage(SlimeTowerImg,640-64,480-64);
+ctx.drawImage(SlimeImg,cursor.x,cursor.y);
+}
 }
 // 執行 draw 函式
 // draw();
