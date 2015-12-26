@@ -26,7 +26,7 @@ $("#game-canvas").click( function(){
   }
 });
 
-enemy.y = enemy.y - 32
+
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
@@ -43,6 +43,7 @@ var canvas = document.getElementById("game-canvas");
 // 取得 2D繪圖用的物件
 var ctx = canvas.getContext("2d");
 function draw(){
+    enemy.y = enemy.y - 1
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(BadTowerImg,128-32,480-32);
