@@ -25,8 +25,8 @@ $("#game-canvas").click( function(){
     }
   }
 });
-while(1=1){
-    enemy.y = enemy - 1}
+
+enemy.y = enemy.y - 32
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
