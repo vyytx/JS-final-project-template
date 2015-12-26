@@ -58,7 +58,7 @@ function draw(){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
  ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
- ctx.drawImage(SlimeImg, slime.x, slime.y);
+ ctx.drawImage(SlimeImg, Slime.x, Slime.y);
 }
 // 執行 draw 函式
 // draw();
