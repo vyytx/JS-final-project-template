@@ -1,6 +1,11 @@
 var FPS = 80
 var IsBuilding = false;
 var cursor = {x:0, y:0};
+var enemy = { 
+    x:96, 
+    y:480-32
+};
+
 var Slime = {
   x : 0,
   y : 0
@@ -43,9 +48,10 @@ function draw(){
   ctx.drawImage(bgImg,0,0);
   ctx.drawImage(BadTowerImg,128-32,480-32);
   ctx.drawImage(SlimeTowerImg,640-64,480-64);
-  if (IsBuilding = true){
+  if (IsBuilding === true){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
+ ctx.drawImage(TowerImg, enemy.x, enemy.y)
 }
 // 執行 draw 函式
 // draw();
