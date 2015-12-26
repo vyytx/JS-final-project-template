@@ -4,12 +4,12 @@ var tower = {
   x : 0,
   y : 0
 };
-$("#game-canvas").mousemove( function(event) {
+$("#game-canvas").mousemove( function(event)) {
   console.log("x:"+event.pageX+",y:"+event.pageY);
   cursor.x=event.pageX;
   cursor.y=event.pageY;
 });
-$("#game-canvas").click( function(){
+$("#game-canvas").click( function()){
   if(cursor.x <= 640 && cursor.x >= 576 && cursor.y <= 480 && cursor.y >= 416){
     IsBuilding = true
   }else{
