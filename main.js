@@ -18,8 +18,6 @@ $("#game-canvas").click( function(){
 });
 function buildTower(IsBuilding = true){
   ctx.drawImage(SlimeImg,cursor.x,cursor.y);
-}else{
-  SlimeImg.hide
 }
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
