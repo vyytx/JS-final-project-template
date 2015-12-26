@@ -4,7 +4,7 @@ var tower = {
   x : 0,
   y : 0
 };
-$("#game-canvas").mousemove( function(event)) {
+$("#game-canvas").mousemove( function(event) {
   console.log("x:"+event.pageX+",y:"+event.pageY);
   cursor.x=event.pageX;
   cursor.y=event.pageY;
