@@ -9,13 +9,13 @@ $("#game-canvas").mousemove( function(event) {
   cursor.x=event.pageX;
   cursor.y=event.pageY;
 });
-$("#game-canvas").click( function()){
+$("#game-canvas").click( function{
   if(cursor.x <= 640 && cursor.x >= 576 && cursor.y <= 480 && cursor.y >= 416){
     IsBuilding = true
   }else{
     IsBuilding = false
   }
-}
+})
 function buildTower(IsBuilding = true){
   ctx.drawImage(SlimeImg,cursor.x,cursor.y);
 }else{
