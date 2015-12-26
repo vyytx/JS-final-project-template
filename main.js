@@ -1,7 +1,7 @@
 var FPS = 80
 var IsBuilding = false;
 var cursor = {x:0, y:0};
-var tower = {
+var Slime = {
   x : 0,
   y : 0
 };
@@ -12,9 +12,12 @@ $("#game-canvas").mousemove( function(event) {
 });
 $("#game-canvas").click( function(){
   if(cursor.x<=640&&cursor.x>=576&&cursor.y<=480&&cursor.y>=416){
-    IsBuilding = true
+    IsBuilding = !IsBuilding;
   }else{
-    IsBuilding = false
+    if(IsBuilding==true){
+      Slime.x = cursor.x;
+      Slime.y = cursor.y;
+    }
   }
 });
 function buildTower(IsBuilding = true){
@@ -36,12 +39,12 @@ var canvas = document.getElementById("game-canvas");
 // 取得 2D繪圖用的物件
 var ctx = canvas.getContext("2d");
 function draw(){
-// 將背景圖片畫在 canvas 上的 (0,0) 位置
-ctx.drawImage(bgImg,0,0);
-ctx.drawImage(BadTowerImg,128-32,480-32);
-ctx.drawImage(SlimeTowerImg,640-64,480-64);
-if (IsBuilding = true){
- ctx.drawImage(SlimeImg,640-64,480-64);
+  // 將背景圖片畫在 canvas 上的 (0,0) 位置
+  ctx.drawImage(bgImg,0,0);
+  ctx.drawImage(BadTowerImg,128-32,480-32);
+  ctx.drawImage(SlimeTowerImg,640-64,480-64);
+  if (IsBuilding = true){
+   ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
 }
 // 執行 draw 函式
