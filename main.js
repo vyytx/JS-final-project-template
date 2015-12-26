@@ -10,7 +10,7 @@ $("#game-canvas").mousemove( function(event) {
   cursor.y=event.pageY;
 });
 $("#game-canvas").click( function(){
-if(cursor.x <= 640 || cursor.x >= 576 && cursor.y <=480 || cursor.y >= 416){
+if(cursor.x <= 640 && cursor.x >= 576 && cursor.y <= 480 && cursor.y >= 416){
   IsBuilding = true
 }else{
   IsBuilding = false
