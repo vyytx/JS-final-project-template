@@ -1,4 +1,4 @@
-var FPS = 80
+var FPS = 30
 var IsBuilding = false;
 var cursor = {x:0, y:0};
 var enemy = { 
@@ -57,7 +57,8 @@ function draw(){
   if (IsBuilding === true){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
- ctx.drawImage(BadTowerImg, enemy.x, enemy.y)
+ ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
+ ctx.drawImage(SlimeImg, slime.x, slime.y);
 }
 // 執行 draw 函式
 // draw();
