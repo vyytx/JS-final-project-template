@@ -1,12 +1,25 @@
 var IsBuilding = false;
 var cursor = {x:0, y:0};
-
+var tower = {
+  x : 0,
+  y : 0
+};
 $("#game-canvas").mousemove( function(event) {
-console.log("x:"+event.pageX+",y:"+event.pageY);
-cursor.x=event.pageX;
-cursor.y=event.pageY;
-  });
-
+  console.log("x:"+event.pageX+",y:"+event.pageY);
+  cursor.x=event.pageX;
+  cursor.y=event.pageY;
+});
+$("#game-canvas").click( function(){
+if(cursor.x <= 640 || cursor.x >= 576 && cursor.y <=480 || cursor.y >= 416){
+  IsBuilding = true
+}else{
+  IsBuilding = false
+}
+function buildTower(IsBuilding = true){
+  ctx.drawImage(SlimeImg,cursor.x,cursor.y);
+}else{
+  SlimeImg.hide
+}
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
@@ -27,7 +40,7 @@ function draw(){
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(BadTowerImg,128-32,480-32);
 ctx.drawImage(SlimeTowerImg,640-64,480-64);
-ctx.drawImage(SlimeImg,cursor.x,cursor.y);
+
 }
 // 執行 draw 函式
 // draw();
