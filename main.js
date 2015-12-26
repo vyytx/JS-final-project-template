@@ -1,3 +1,4 @@
+var FPS = 80
 var IsBuilding = false;
 var cursor = {x:0, y:0};
 var tower = {
@@ -39,9 +40,11 @@ function draw(){
 ctx.drawImage(bgImg,0,0);
 ctx.drawImage(BadTowerImg,128-32,480-32);
 ctx.drawImage(SlimeTowerImg,640-64,480-64);
-
+if (IsBuilding = true){
+ ctx.drawImage(SlimeImg,640-64,480-64);
+ }
 }
 // 執行 draw 函式
 // draw();
-setInterval(draw,16);
+setInterval(draw,1000/FPS);
 
