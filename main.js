@@ -19,15 +19,13 @@ $("#game-canvas").click( function(){
   if(cursor.x<=640&&cursor.x>=576&&cursor.y<=480&&cursor.y>=416){
     IsBuilding = !IsBuilding;
   }else{
-    if(IsBuilding==true){
+    if(IsBuilding===true){
       Slime.x = cursor.x;
       Slime.y = cursor.y;
     }
   }
 });
-function buildTower(IsBuilding = true){
-  ctx.drawImage(SlimeImg,cursor.x,cursor.y);
-}
+
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
 var SlimeImg = document.createElement("img");
