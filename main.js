@@ -52,7 +52,7 @@ function draw(){
     enemy.move();
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
-  ctx.drawImage(BadTowerImg,128-32,480-32);
+  // ctx.drawImage(BadTowerImg,128-32,480-32);
   ctx.drawImage(SlimeTowerImg,640-64,480-64);
   if (IsBuilding === true){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
