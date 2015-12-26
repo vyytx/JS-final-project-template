@@ -51,7 +51,7 @@ function draw(){
   if (IsBuilding === true){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
- ctx.drawImage(TowerImg, enemy.x, enemy.y)
+ ctx.drawImage(BadTowerImg, enemy.x, enemy.y)
 }
 // 執行 draw 函式
 // draw();
