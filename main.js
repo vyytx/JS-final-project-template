@@ -25,7 +25,7 @@ $("#game-canvas").click( function(){
     }
   }
 });
-function a2(){
+while(1=1){
     enemy.y = enemy - 1}
 // 創造 img HTML 元素，並放入變數中
 var bgImg = document.createElement("img");
@@ -54,5 +54,5 @@ function draw(){
 }
 // 執行 draw 函式
 // draw();
-setInterval(a2,draw,1000/FPS);
+setInterval(draw,1000/FPS);
 
