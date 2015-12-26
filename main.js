@@ -6,7 +6,7 @@ var tower = {
   y : 0
 };
 $("#game-canvas").mousemove( function(event) {
-  console.log("x:"+event.pageX+",y:"+event.pageY);
+  // console.log("x:"+event.pageX+",y:"+event.pageY);
   cursor.x=event.pageX;
   cursor.y=event.pageY;
 });
