@@ -61,7 +61,7 @@ function draw(){
   // ctx.drawImage(BadTowerImg,128-32,480-32);
   ctx.drawImage(SlimeTowerImg,640-64,480-64);
   if (IsBuilding === true){
-   ctx.drawImage(SlimeImg,cursor.x,cursor.y);
+   ctx.drawImage(SlimeImg,cursor.x,cursor.y, 32, 32);
  }
  ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
  ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
