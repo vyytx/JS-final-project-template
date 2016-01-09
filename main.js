@@ -1,4 +1,4 @@
-var FPS = 0.25
+var FPS = 120
 var IsBuilding = false;
 var cursor = {x:0, y:0};
 var enemy = { 
