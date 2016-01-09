@@ -44,7 +44,7 @@ SlimeImg.src = "images/slime.gif";
 SlimeTowerImg.src = "images/tower-btn.png";
 BadTowerImg.src = "images/tower.png";
 // 找出網頁中的 canvas 元素
-var canvas = document.getElementById("game-canvas");
+var canvas = document.getElementById('game-canvas');
 
 // 取得 2D繪圖用的物件
 var ctx = canvas.getContext("2d");
