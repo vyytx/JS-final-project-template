@@ -13,7 +13,7 @@ var enemy = {
 };
 
 var Slime = {
-  x : 64,
+  x : 128-32,
   y : 0
 };
 $("#game-canvas").mousemove( function(event) {
