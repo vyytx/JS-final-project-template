@@ -7,7 +7,7 @@ var enemy = {
     speed:64,
     direction:{x:0, y:-1},
     pathDes : 0,
-        move: function(){
+    move: function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
 
             // 首先，移動到下一個路徑點
@@ -28,7 +28,7 @@ var enemy = {
             // this.y += this.direction.y * this.speed/FPS;
             this.y = this.y + this.direction.y * this.speed/FPS;
         }
-    };
+    }
 }
 
 var enemyPath = [
@@ -119,4 +119,3 @@ function getUnitVector(srcX, srcY, targetX, targetY) {
     };
     return unitVector;
 }
-
