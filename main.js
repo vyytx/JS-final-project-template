@@ -1,4 +1,4 @@
-var FPS = 240
+var FPS = 720
 var IsBuilding = false;
 var cursor = {x:0, y:0};
 var enemy = { 
@@ -6,6 +6,7 @@ var enemy = {
     y:480-32,
     speed:64,
     direction:{x:0, y:-1},
+    pathDes : 0,
     move:function (){
         this.x += this.direction.x * this.speed/FPS;
         this.y += this.direction.y * this.speed/FPS;
