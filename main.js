@@ -1,4 +1,4 @@
-var FPS = 30
+var FPS = 60
 var IsBuilding = false;
 var cursor = {x:0, y:0};
 var enemy = { 
@@ -13,7 +13,7 @@ var enemy = {
 };
 
 var Slime = {
-  x : 0,
+  x : 128,
   y : 0
 };
 $("#game-canvas").mousemove( function(event) {
