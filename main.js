@@ -93,3 +93,29 @@ function draw(){
 // draw();
 setInterval(draw,1000/FPS);
 
+// ---- \\
+
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
+    if(     pointX >= targetX
+        &&  pointX <= targetX + targetWidth
+        &&  pointY >= targetY
+        &&  pointY <= targetY + targetHeight
+    ){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getUnitVector(srcX, srcY, targetX, targetY) {
+    var offsetX = targetX - srcX;
+    var offsetY = targetY - srcY;
+    var distance = Math.sqrt( Math.pow(offsetX,2) + Math.pow(offsetY,2) );
+
+    var unitVector = {
+        x: offsetX/distance,
+        y: offsetY/distance
+    };
+    return unitVector;
+}
+
