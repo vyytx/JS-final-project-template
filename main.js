@@ -28,7 +28,8 @@ var enemy = {
             // this.y += this.direction.y * this.speed/FPS;
             this.y = this.y + this.direction.y * this.speed/FPS;
         }
-    };
+    }
+};
 
 var enemyPath = [
     {x:96, y:64},
