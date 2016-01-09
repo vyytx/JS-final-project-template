@@ -12,6 +12,12 @@ var enemy = {
     }
 };
 
+var enemyPath = [
+    {x:96, y:64},
+    {x:384, y:64}
+];
+
+
 var Slime = {
   x : 128-32,
   y : 0
@@ -58,7 +64,7 @@ function draw(){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y);
  }
  ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
- ctx.drawImage(SlimeImg, Slime.x, Slime.y);
+ ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
 }
 // 執行 draw 函式
 // draw();
