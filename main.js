@@ -1,6 +1,8 @@
 var FPS = 60
 var IsBuilding = false;
 var cursor = {x:0, y:0};
+var clock = 0;
+var enemies =[];
 var enemy = new create_Enemy();
 
 var enemyPath = [
@@ -52,6 +54,7 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 function draw(){
     enemy.move();
+    enemies.push(enemy);
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
   // ctx.drawImage(BadTowerImg,128-32,480-32);
@@ -61,6 +64,14 @@ function draw(){
  }
  ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
  ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
+ for ( var i=0; i<enemies.length; i++ ) {
+    // enemies[i] 是目前正在操作的敵人
+    // 在這行讓 enemies[i] 移動
+    // 在這行將 enemies[i] 印出來
+}
+
+ clock++;
+
 }
 // 執行 draw 函式
 // draw();
