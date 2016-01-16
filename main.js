@@ -54,10 +54,10 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 function draw(){
     if ( clock % 80 == 0 ) {
-    var newEnemy = new createnemy();
+    var newEnemy = new create_Enemy();
     enemies.push(newEnemy);
     }
-    enemy.move();
+    
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
   // ctx.drawImage(BadTowerImg,128-32,480-32);
