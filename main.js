@@ -120,3 +120,4 @@ this.move = function(){
             this.y = this.y + this.direction.y * this.speed/FPS;
         }
     }
+}
