@@ -1,3 +1,7 @@
+while(0===0){
+    var enemy = new Enemy();
+}
+
 var FPS = 60
 var IsBuilding = false;
 var cursor = {x:0, y:0};
