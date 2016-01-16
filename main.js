@@ -120,12 +120,32 @@ function getUnitVector(srcX, srcY, targetX, targetY) {
     return unitVector;
 }
 
-function Enemy() {
+function create_Enemy() {
 this.x = 96; 
 this.y = 480-32;
 this.direction = {x:0,y:-1};
 this.speed = 64;
 this.pathDes = 0;
-this.move = function(){ …. }
-}
+this.move = function(){
+    if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
+
+            // 首先，移動到下一個路徑點
+            this.x = enemyPath[this.pathDes].x;
+            this.y = enemyPath[this.pathDes].y;
+
+            // 指定下一個路徑點
+            this.pathDes++;
+
+            // 取得前往下一個路徑點的單位向量
+            var unitVector = getUnitVector( this.x, this.y, enemyPath[this.pathDes].x, enemyPath[this.pathDes].y );
+            this.direction.x = unitVector.x;
+            this.direction.y = unitVector.y;
+
+        } else {
+            // this.x += this.direction.x * this.speed/FPS;
+            this.x = this.x + this.direction.x * this.speed/FPS;
+            // this.y += this.direction.y * this.speed/FPS;
+            this.y = this.y + this.direction.y * this.speed/FPS;
+        }
+    }
 
