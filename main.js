@@ -54,7 +54,7 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 function draw(){
     if ( clock % 80 == 0 ) {
-    var newEnemy = new Enemy();
+    var newEnemy = new createnemy();
     enemies.push(newEnemy);
     }
     enemy.move();
@@ -134,3 +134,4 @@ function create_Enemy() {
         }
     }
 }
+
