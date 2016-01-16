@@ -65,12 +65,12 @@ function draw(){
   if (IsBuilding === true){
    ctx.drawImage(SlimeImg,cursor.x,cursor.y, 32, 32);
  }
- ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
+ ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
  ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
  for ( var i=0; i<enemies.length; i++ ) {
     // enemies[i] 是目前正在操作的敵人
     enemies[i].move();
-    // 在這行將 enemies[i] 印出來
+    ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
 }
 
  clock++;
