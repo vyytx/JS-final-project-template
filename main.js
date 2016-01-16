@@ -69,7 +69,7 @@ function draw(){
  ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
  for ( var i=0; i<enemies.length; i++ ) {
     // enemies[i] 是目前正在操作的敵人
-    enemies.move;
+    enemies[i].move();
     // 在這行將 enemies[i] 印出來
 }
 
