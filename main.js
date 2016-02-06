@@ -78,7 +78,7 @@ function draw(){
     //寫出樹的血量
     ctx.font = "24px Arial";
     ctx.fillStyle = "white";
-    ctx.fillText( hp, 0, 0 );
+    ctx.fillText(hp,0,0);
 }
 
  clock++;
