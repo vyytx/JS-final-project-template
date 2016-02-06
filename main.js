@@ -157,7 +157,7 @@ function create_Enemy() {
         }
     }
 }
-
+}
 
     
 //function IsEnemyAlive(){
