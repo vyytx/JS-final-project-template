@@ -22,8 +22,7 @@ var Slime = {
   y : 0
 };
 
-ctx.font = "24px Arial";
-ctx.fillStyle = "white";
+
 
 $("#game-canvas").mousemove( function(event) {
   // console.log("x:"+event.pageX+",y:"+event.pageY);
@@ -77,7 +76,9 @@ function draw(){
     enemies[i].move();
     ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
     //寫出樹的血量
-    ctx.fillText(hp,1,1);
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText("hp : " + hp,1,1);
 }
 
  clock++;
