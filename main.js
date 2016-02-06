@@ -4,6 +4,7 @@ var cursor = {x:0, y:0};
 var clock = 0;
 var enemies =[];
 var enemy = new create_Enemy();
+var hp = 100;
 
 var enemyPath = [
     {x:96, y:64},
@@ -20,6 +21,9 @@ var Slime = {
   x : 128-32,
   y : 0
 };
+
+
+
 $("#game-canvas").mousemove( function(event) {
   // console.log("x:"+event.pageX+",y:"+event.pageY);
   cursor.x=event.pageX;
@@ -71,6 +75,10 @@ function draw(){
     // enemies[i] 是目前正在操作的敵人
     enemies[i].move();
     ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
+    //寫出樹的血量
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "white";
+    ctx.fillText( hp, 0, 0 );
 }
 
  clock++;
