@@ -158,8 +158,8 @@ function draw(){
 
 }
     
-function IsEnemyAlive(){
-    if(enemy.x = 544 || enemy.y = 96){
-        enemy.hp = 0
-    }
-}
+//function IsEnemyAlive(){
+    //if(enemy.x = 544 || enemy.y = 96){
+        //enemy.hp = 0
+    //}
+//}
