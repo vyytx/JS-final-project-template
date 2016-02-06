@@ -79,7 +79,7 @@ var ctx = canvas.getContext("2d");
 
  clock++;
 
-}
+
 // 執行 draw 函式
 // draw();
 setInterval(interval,1000/FPS);
