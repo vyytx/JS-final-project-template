@@ -56,11 +56,7 @@ var canvas = document.getElementById('game-canvas');
 
 // 取得 2D繪圖用的物件
 var ctx = canvas.getContext("2d");
-function draw(){
-    if ( clock % 80 == 0 ) {
-    var newEnemy = new create_Enemy();
-    enemies.push(newEnemy);
-    }
+
     
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
@@ -86,9 +82,14 @@ function draw(){
 }
 // 執行 draw 函式
 // draw();
-setInterval(draw,1000/FPS);
+setInterval(interval,1000/FPS);
 
 // ---- \\
+
+function interval (){
+    draw();
+}
+
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
@@ -120,6 +121,7 @@ function create_Enemy() {
     this.direction = {x:0,y:-1};
     this.speed = 64;
     this.pathDes = 0;
+    this.hp = 10;
     this.move = function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
             // 首先，移動到下一個路徑點
@@ -143,3 +145,21 @@ function create_Enemy() {
     }
 }
 
+function draw(){
+    if ( clock % 80 == 0 ) {
+        var newEnemy = new create_Enemy();
+        enemies.push(newEnemy);
+            
+    };
+    for(var i=0; i<enemies.length; i++){
+        enemies[i].move();
+        ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
+    };
+
+}
+    
+function IsEnemyAlive(){
+    if(enemy.x = 544 || enemy.y = 96){
+        enemy.hp = 0
+    }
+}
