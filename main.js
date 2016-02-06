@@ -57,7 +57,17 @@ var canvas = document.getElementById('game-canvas');
 // 取得 2D繪圖用的物件
 var ctx = canvas.getContext("2d");
 
-    
+function draw(){
+    if ( clock % 80 == 0 ) {
+        var newEnemy = new create_Enemy();
+        enemies.push(newEnemy);
+            
+    };
+    for(var i=0; i<enemies.length; i++){
+        enemies[i].move();
+        ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
+    };
+
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
   // ctx.drawImage(BadTowerImg,128-32,480-32);
@@ -79,7 +89,7 @@ var ctx = canvas.getContext("2d");
 
  clock++;
 
-
+}
 // 執行 draw 函式
 // draw();
 setInterval(interval,1000/FPS);
@@ -145,18 +155,7 @@ function create_Enemy() {
     }
 }
 
-function draw(){
-    if ( clock % 80 == 0 ) {
-        var newEnemy = new create_Enemy();
-        enemies.push(newEnemy);
-            
-    };
-    for(var i=0; i<enemies.length; i++){
-        enemies[i].move();
-        ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
-    };
 
-}
     
 //function IsEnemyAlive(){
     //if(enemy.x = 544 || enemy.y = 96){
