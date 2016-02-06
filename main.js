@@ -64,9 +64,12 @@ function draw(){
             
     };
     for(var i=0; i<enemies.length; i++){
-        enemies[i].move();
-        ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
-    };
+        if (enemies[i].hp<=0) {
+            enemies.splice(i,1);
+        } else {
+            enemies[i].move();
+            ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
+        }
 
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
