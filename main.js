@@ -138,11 +138,12 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 
 function draw(){
-    for()
-    ctx.drawImage( 
-    cannonballImg,cannonballs[i].x,cannonballs[i].y 
-    );
-
+    for(var i = 0; i = cannonballs.length; i++){
+        ctx.drawImage( 
+        cannonballImg,cannonballs[i].x,cannonballs[i].y 
+        );
+    }
+    
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
         enemies.push(newEnemy);
