@@ -58,6 +58,7 @@ var enemyPath = [
     {x:544, y:96}
 ];
 
+var cannonballs = [];
 
 var Slime = {
   x : 128-32,
