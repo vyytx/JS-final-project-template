@@ -1,6 +1,10 @@
 function Cannonball () {
     this.speed = 320;
     this.damage = 10/3;
+    var aimedEnemy = enemies[tower.aimingEnemyId];
+    this.x = tower.x+16;
+    this.y = tower.y;
+    this.direction = getUnitVector(this.x, this.y, aimedEnemy.x, aimedEnemy.y);
 }
 
 function create_Enemy() {
@@ -61,8 +65,37 @@ var enemyPath = [
 var cannonballs = [];
 
 var Slime = {
-  x : 128-32,
-  y : 0
+        x : 128-32,
+        y : 0,
+        range: 96,
+        aimingEnemyId: null,
+        fireRate: 1, // 1秒發射一次
+        readyToShootTime: 1, // 還有幾秒就發射
+        shoot: function(){
+            var newCannonball = new Cannonball(this);
+            cannonballs.push( newCannonball );
+        },
+        searchEnemy: function(){
+            // 減少距離下個射擊的冷卻時間
+            this.readyToShootTime -= 1/FPS
+            
+            for(var i=0; i<enemies.length; i++){
+                var distance = Math.sqrt( 
+                Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+                );
+                if (distance<=this.range) {
+                    this.aimingEnemyId = i;
+                     // 判斷是否倒數完畢
+                    if (this.readyToShootTime<=0) {
+                        this.shoot();
+                        this.readyToShootTime = this.fireRate;
+                    }
+                    return;
+                }
+            }
+            // 如果都沒找到，會進到這行，清除鎖定的目標
+            this.aimingEnemyId = null;
+        }
 };
 
 
@@ -102,38 +135,7 @@ var ctx = canvas.getContext("2d");
 
 function draw(){
     
-    var tower = {
-    range: 96,
-    aimingEnemyId: null,
-    fireRate: 1, // 1秒發射一次
-    readyToShootTime: 1, // 還有幾秒就發射
-    shoot: function(){
-        var newCannonball = new Cannonball(this);
-        cannonballs.push( newCannonball );
-    },
-    searchEnemy: function(){
-    // 減少距離下個射擊的冷卻時間
-    this.readyToShootTime -= 1/FPS
-    
-    for(var i=0; i<enemies.length; i++){
-    var distance = Math.sqrt( 
-    Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
-    );
-    if (distance<=this.range) {
-        this.aimingEnemyId = i;
-         // 判斷是否倒數完畢
-        if (this.readyToShootTime<=0) {
-         this.shoot();
-        this.readyToShootTime = this.fireRate;
-        }
 
-        return;
-    }
-    }
-    // 如果都沒找到，會進到這行，清除鎖定的目標
-    this.aimingEnemyId = null;
-    }
-    };
 
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
@@ -149,9 +151,9 @@ function draw(){
         }
     }
     
-    tower.searchEnemy();
-    if ( tower.aimingEnemyId!=null ) {
-        var id = tower.aimingEnemyId;
+    Slime.searchEnemy();
+    if ( Slime.aimingEnemyId!=null ) {
+        var id = Slime.aimingEnemyId;
         ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
     }
 
