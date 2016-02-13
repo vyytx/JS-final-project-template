@@ -100,7 +100,7 @@ function draw(){
             enemies.splice(i,1);
         } else {
             enemies[i].move();
-            ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
+            ctx.drawImage( SlimeImg, enemies[i].x, enemies[i].y);
         }
     }
 
