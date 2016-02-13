@@ -7,6 +7,8 @@ function create_Enemy() {
     this.hp = 10;
     this.move = function(){
         if( this.pathDes == 7){
+            hp = 0;
+            
         }else if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
             // 首先，移動到下一個路徑點
             this.x = enemyPath[this.pathDes].x;
