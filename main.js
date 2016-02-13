@@ -1,4 +1,4 @@
-function Connonball () {
+function Cannonball () {
     this.speed = 320;
     this.damage = 5;
 }
