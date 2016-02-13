@@ -40,6 +40,9 @@ var enemies =[];
 var enemy = new create_Enemy();
 var hp = 200;
 
+var crosshairImg = document.createElement("img");
+crosshairImg.src = "images/crosshair.png";
+
 var enemyPath = [
     {x:96, y:64},
     {x:384, y:64},
@@ -111,7 +114,12 @@ function draw(){
     }
     };
 
-    
+    tower.searchEnemy();
+    if ( tower.aimingEnemyId!=null ) {
+    var id = tower.aimingEnemyId;
+    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
+    }
+
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
         enemies.push(newEnemy);
