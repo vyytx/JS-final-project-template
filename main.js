@@ -1,3 +1,8 @@
+function Connonball () {
+    this.speed = 320;
+    this.damage = 5;
+}
+
 function create_Enemy() {
     this.x = 96; 
     this.y = 480-32;
