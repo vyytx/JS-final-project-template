@@ -135,12 +135,6 @@ function draw(){
     }
     };
 
-    tower.searchEnemy();
-    if ( tower.aimingEnemyId!=null ) {
-    var id = tower.aimingEnemyId;
-    ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
-    }
-
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
         enemies.push(newEnemy);
@@ -153,6 +147,12 @@ function draw(){
             enemies[i].move();
             ctx.drawImage( SlimeImg, enemies[i].x, enemies[i].y);
         }
+    }
+    
+    tower.searchEnemy();
+    if ( tower.aimingEnemyId!=null ) {
+        var id = tower.aimingEnemyId;
+        ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
     }
 
     // 將背景圖片畫在 canvas 上的 (0,0) 位置
