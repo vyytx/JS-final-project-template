@@ -52,6 +52,10 @@ var hp = 200;
 var crosshairImg = document.createElement("img");
 crosshairImg.src = "images/crosshair.png";
 
+var cannonballImg = document.createElement("img");
+cannonballImg.src = "images/cannon-ball.png";
+
+
 var enemyPath = [
     {x:96, y:64},
     {x:384, y:64},
