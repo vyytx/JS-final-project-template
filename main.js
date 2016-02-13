@@ -142,10 +142,6 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 
 function draw(){
-    for(var i = 0; i < enemies.length; i++){
-        cannonballs[i].move();
-        ctx.drawImage(cannonballImg,cannonballs[i].x,cannonballs[i].y);
-    }
     
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
@@ -161,11 +157,6 @@ function draw(){
         }
     }
     
-    Slime.searchEnemy();
-    if ( Slime.aimingEnemyId!=null ) {
-        var id = Slime.aimingEnemyId;
-        ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
-    }
 
     // 將背景圖片畫在 canvas 上的 (0,0) 位置
     ctx.drawImage(bgImg,0,0);
@@ -184,6 +175,18 @@ function draw(){
         ctx.font = "24px Arial";
         ctx.fillStyle = "white";
         ctx.fillText("hp : " + hp,1,32);
+    }
+    
+    
+    for(var i = 0; i < cannonballs.length; i++){
+        cannonballs[i].move();
+        ctx.drawImage(cannonballImg,cannonballs[i].x,cannonballs[i].y);
+    }
+
+    Slime.searchEnemy();
+    if ( Slime.aimingEnemyId!=null ) {
+        var id = Slime.aimingEnemyId;
+        ctx.drawImage( crosshairImg, enemies[id].x, enemies[id].y );
     }
 
  clock++;
