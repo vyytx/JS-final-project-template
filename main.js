@@ -4,7 +4,7 @@ function create_Enemy() {
     this.direction = {x:0,y:-1};
     this.speed = 64;
     this.pathDes = 0;
-    this.hp = 10;
+    this.hp = 5;
     this.move = function(){
         if( this.pathDes == 7){
             hp = hp -10;
