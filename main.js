@@ -1,6 +1,6 @@
 function Cannonball () {
     this.speed = 320;
-    this.damage = 10/3;
+    this.damage = 20/3;
     var aimedEnemy = enemies[Slime.aimingEnemyId];
     this.x = Slime.x+16;
     this.y = Slime.y;
