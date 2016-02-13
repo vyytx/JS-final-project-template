@@ -11,7 +11,7 @@ function create_Enemy() {
     this.pathDes = 0;
     this.hp = 5;
     this.move = function(){
-        if( this.pathDes == enemyPath.length){
+        if( this.pathDes == 7){
             hp = hp -10;
             this.hp = 0;
         }else if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
