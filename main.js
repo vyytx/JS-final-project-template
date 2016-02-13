@@ -89,11 +89,12 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 
 function draw(){
+    
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
         enemies.push(newEnemy);
-            
     };
+    
     for(var i=0; i<enemies.length; i++){
         if (enemies[i].hp<=0) {
             enemies.splice(i,1);
@@ -101,27 +102,26 @@ function draw(){
             enemies[i].move();
             ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
         }
-        
     }
 
-  // 將背景圖片畫在 canvas 上的 (0,0) 位置
-  ctx.drawImage(bgImg,0,0);
-  // ctx.drawImage(BadTowerImg,128-32,480-32);
-  ctx.drawImage(SlimeTowerImg,640-64,480-64);
-  if (IsBuilding === true){
-   ctx.drawImage(SlimeImg,cursor.x,cursor.y, 32, 32);
- }
- //ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
- ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
- for ( var i=0; i<enemies.length; i++ ) {
-    // enemies[i] 是目前正在操作的敵人
-    enemies[i].move();
-    ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
-    //寫出樹的血量
-    ctx.font = "24px Arial";
-    ctx.fillStyle = "white";
-    ctx.fillText("hp : " + hp,1,32);
-}
+    // 將背景圖片畫在 canvas 上的 (0,0) 位置
+    ctx.drawImage(bgImg,0,0);
+    // ctx.drawImage(BadTowerImg,128-32,480-32);
+    ctx.drawImage(SlimeTowerImg,640-64,480-64);
+    if (IsBuilding === true){
+        ctx.drawImage(SlimeImg,cursor.x,cursor.y, 32, 32);
+    }
+    //ctx.drawImage(BadTowerImg, enemy.x, enemy.y);
+    ctx.drawImage(SlimeImg, Slime.x, Slime.y, 32, 32);
+    for ( var i=0; i<enemies.length; i++ ) {
+        // enemies[i] 是目前正在操作的敵人
+        enemies[i].move();
+        ctx.drawImage(BadTowerImg, enemies[i].x, enemies[i].y);
+        //寫出樹的血量
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("hp : " + hp,1,32);
+    }
 
  clock++;
 
@@ -158,8 +158,8 @@ function getUnitVector(srcX, srcY, targetX, targetY) {
         x: offsetX/distance,
         y: offsetY/distance
     };
-        return unitVector;
-}}
+    return unitVector;
+}
 
 
     
