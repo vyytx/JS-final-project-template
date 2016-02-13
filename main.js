@@ -107,6 +107,9 @@ function draw(){
     aimingEnemyId: null,
     fireRate: 1, // 1秒發射一次
     readyToShootTime: 1, // 還有幾秒就發射
+    shoot: function(){
+    var newCannonball = new Cannonball(this);
+    cannonballs.push( newCannonball );
     searchEnemy: function(){
     for(var i=0; i<enemies.length; i++){
     var distance = Math.sqrt( 
