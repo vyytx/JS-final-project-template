@@ -108,16 +108,26 @@ function draw(){
     fireRate: 1, // 1秒發射一次
     readyToShootTime: 1, // 還有幾秒就發射
     shoot: function(){
-    var newCannonball = new Cannonball(this);
-    cannonballs.push( newCannonball );
+        var newCannonball = new Cannonball(this);
+        cannonballs.push( newCannonball );
+    },
     searchEnemy: function(){
+    // 減少距離下個射擊的冷卻時間
+    this.readyToShootTime -= 1/FPS
+    
     for(var i=0; i<enemies.length; i++){
     var distance = Math.sqrt( 
     Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
     );
     if (distance<=this.range) {
-    this.aimingEnemyId = i;
-    return;
+        this.aimingEnemyId = i;
+         // 判斷是否倒數完畢
+        if (this.readyToShootTime<=0) {
+         this.shoot();
+        this.readyToShootTime = this.fireRate;
+        }
+
+        return;
     }
     }
     // 如果都沒找到，會進到這行，清除鎖定的目標
