@@ -139,7 +139,9 @@ var ctx = canvas.getContext("2d");
 
 function draw(){
     
-
+    ctx.drawImage( 
+    connonballImage,cannonballs[i].x,cannonballs[i].y 
+    );
 
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
