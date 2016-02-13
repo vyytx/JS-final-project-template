@@ -38,7 +38,7 @@ var cursor = {x:0, y:0};
 var clock = 0;
 var enemies =[];
 var enemy = new create_Enemy();
-var hp = 100;
+var hp = 200;
 
 var enemyPath = [
     {x:96, y:64},
@@ -92,6 +92,25 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 
 function draw(){
+    
+    var tower = {
+    range: 96,
+    aimingEnemyId: null,
+    searchEnemy: function(){
+    for(var i=0; i<enemies.length; i++){
+    var distance = Math.sqrt( 
+    Math.pow(this.x-enemies[i].x,2) + Math.pow(this.y-enemies[i].y,2) 
+    );
+    if (distance<=this.range) {
+    this.aimingEnemyId = i;
+    return;
+    }
+    }
+    // 如果都沒找到，會進到這行，清除鎖定的目標
+    this.aimingEnemyId = null;
+    }
+    };
+
     
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
