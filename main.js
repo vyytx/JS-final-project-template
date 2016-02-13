@@ -1,9 +1,9 @@
 function Cannonball () {
     this.speed = 320;
     this.damage = 10/3;
-    var aimedEnemy = enemies[tower.aimingEnemyId];
-    this.x = tower.x+16;
-    this.y = tower.y;
+    var aimedEnemy = enemies[Slime.aimingEnemyId];
+    this.x = Slime.x+16;
+    this.y = Slime.y;
     this.direction = getUnitVector(this.x, this.y, aimedEnemy.x, aimedEnemy.y);
 }
 
