@@ -1,6 +1,6 @@
 function Cannonball () {
     this.speed = 320;
-    this.damage = 5;
+    this.damage = 10/3;
 }
 
 function create_Enemy() {
@@ -104,6 +104,8 @@ function draw(){
     var tower = {
     range: 96,
     aimingEnemyId: null,
+    fireRate: 1, // 1秒發射一次
+    readyToShootTime: 1, // 還有幾秒就發射
     searchEnemy: function(){
     for(var i=0; i<enemies.length; i++){
     var distance = Math.sqrt( 
