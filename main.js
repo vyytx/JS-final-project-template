@@ -5,6 +5,10 @@ function Cannonball () {
     this.x = Slime.x+16;
     this.y = Slime.y;
     this.direction = getUnitVector(this.x, this.y, aimedEnemy.x, aimedEnemy.y);
+    this.move = function(){
+        this.x += this.direction.x*this.speed/FPS;
+        this.y += this.direction.y*this.speed/FPS;
+    }
 }
 
 function create_Enemy() {
@@ -139,7 +143,7 @@ var ctx = canvas.getContext("2d");
 
 function draw(){
     for(var i = 0; i < cannonballs.length; i++){
-        ctx.drawImage( cannonballImg, cannonballs[i].x, cannonballs[i].y );
+        ctx.drawImage(cannonballImg,cannonballs[i].x,cannonballs[i].y);
     }
     
     if ( clock % 80 == 0 ) {
