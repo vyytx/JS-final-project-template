@@ -101,6 +101,8 @@ function draw(){
             enemies[i].move();
             ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
         }
+        
+    }
 
   // 將背景圖片畫在 canvas 上的 (0,0) 位置
   ctx.drawImage(bgImg,0,0);
