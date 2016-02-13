@@ -142,7 +142,8 @@ var canvas = document.getElementById('game-canvas');
 var ctx = canvas.getContext("2d");
 
 function draw(){
-    for(var i = 0; i < cannonballs.length; i++){
+    for(var i = 0; i < enemies.length; i++){
+        cannonballs[i].move();
         ctx.drawImage(cannonballImg,cannonballs[i].x,cannonballs[i].y);
     }
     
