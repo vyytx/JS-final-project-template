@@ -22,7 +22,7 @@ function Cannonball () {
     }
 }
 
-function kill (){
+function kill () {
     hp = 0 ;
 }
 
