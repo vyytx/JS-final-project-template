@@ -8,6 +8,16 @@ function Cannonball () {
     this.move = function(){
         this.x += this.direction.x*this.speed/FPS;
         this.y += this.direction.y*this.speed/FPS;
+        
+        for(var _i=0; _i<enemies.length; _i++){
+            this.hitted =  isCollided(this.x, this.y, enemies[_i].x, enemies[_i].y, 32, 32 );
+            if (this.hitted) {
+                enemies[_i].hp -= this.damage;
+                // 如果不加這行會很慘喔！
+                break;
+                
+            }
+        }
     }
 }
 
@@ -234,7 +244,6 @@ function getUnitVector(srcX, srcY, targetX, targetY) {
 }
 
 
-    
 //function IsEnemyAlive(){
     //if(enemy.x = 544 || enemy.y = 96){
         //enemy.hp = 0
