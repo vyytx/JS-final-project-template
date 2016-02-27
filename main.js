@@ -13,7 +13,7 @@ function Cannonball () {
             this.hitted =  isCollided(this.x, this.y, enemies[_i].x, enemies[_i].y, 32, 32 );
             if (this.hitted) {
                 enemies[_i].hp -= this.damage;
-                score = score + 5;
+                score = score + 10;
                 // 如果不加這行會很慘喔！
                 break;
                 
