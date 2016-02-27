@@ -155,6 +155,16 @@ var ctx = canvas.getContext("2d");
 
 function draw(){
     
+    for(var _i=0; _i<cannonBalls.length; _i++){
+        cannonBalls[_i].move();
+        if (cannonBalls[_i].hitted) {
+            cannonBalls.splice(_i,1);
+        } else {
+            ctx.drawImage( cannonballImg, cannonBalls[_i].x, cannonBalls[_i].y );
+        }
+    }
+
+    
     if ( clock % 80 == 0 ) {
         var newEnemy = new create_Enemy();
         enemies.push(newEnemy);
