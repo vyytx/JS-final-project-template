@@ -233,7 +233,7 @@ setInterval(interval,1000/FPS);
 function interval (){
     
     if (hp <= 0){
-        clearinterval(interval,1000/FPS);
+        clearInterval(interval,1000/FPS);
         ctx.font = "48px Arial";
         ctx.fillStyle = "white";
         ctx.fillText("GameOver",320,240);
