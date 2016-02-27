@@ -22,6 +22,10 @@ function Cannonball () {
     }
 }
 
+function kill (){
+    hp = 0 ;
+}
+
 function create_Enemy() {
     this.x = 96; 
     this.y = 480-32;
