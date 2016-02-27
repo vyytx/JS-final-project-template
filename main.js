@@ -1,5 +1,5 @@
 function Cannonball () {
-    this.speed = 320;
+    this.speed = 640;
     this.damage = 20/3;
     var aimedEnemy = enemies[Slime.aimingEnemyId];
     this.x = Slime.x+16;
@@ -13,7 +13,7 @@ function Cannonball () {
             this.hitted =  isCollided(this.x, this.y, enemies[_i].x, enemies[_i].y, 32, 32 );
             if (this.hitted) {
                 enemies[_i].hp -= this.damage;
-                score = score + 10;
+                score = score + 5;
                 // 如果不加這行會很慘喔！
                 break;
                 
@@ -90,7 +90,7 @@ var Slime = {
         y : 0,
         range: 96,
         aimingEnemyId: null,
-        fireRate: 1, // 1秒發射一次
+        fireRate: 0.00000001, // 1秒發射一次
         readyToShootTime: 1, // 還有幾秒就發射
         shoot: function(){
             var newCannonball = new Cannonball(this);
