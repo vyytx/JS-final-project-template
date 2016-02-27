@@ -227,7 +227,19 @@ setInterval(interval,1000/FPS);
 // ---- \\
 
 function interval (){
-    draw();
+    
+    if (hp == 0){
+        clearinterval();
+        ctx.font = "48px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("GameOver",320,240);
+        ctx.font = "24px Arial";
+        ctx.fillStyle = "white";
+        ctx.fillText("Your Score : " + score ,320,290);
+    }else{
+        draw();
+    }
+    
 }
 
 
