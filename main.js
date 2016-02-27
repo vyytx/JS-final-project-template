@@ -72,6 +72,8 @@ var enemyPath = [
 
 var cannonballs = [];
 
+var towers = [];
+
 var Slime = {
         x : 128-32,
         y : 0,
@@ -181,6 +183,10 @@ function draw(){
     for(var i = 0; i < cannonballs.length; i++){
         cannonballs[i].move();
         ctx.drawImage(cannonballImg,cannonballs[i].x,cannonballs[i].y);
+    }
+    
+    for(var i = 0; i < towers.length; i++){
+        ctx.drawImage(SlimeImg,towers[i].x,towers[i].y);
     }
 
     Slime.searchEnemy();
