@@ -13,6 +13,7 @@ function Cannonball () {
             this.hitted =  isCollided(this.x, this.y, enemies[_i].x, enemies[_i].y, 32, 32 );
             if (this.hitted) {
                 enemies[_i].hp -= this.damage;
+                score = score + 10;
                 // 如果不加這行會很慘喔！
                 break;
                 
@@ -54,7 +55,7 @@ function create_Enemy() {
     }
 }
 
-
+var score = 0
 var FPS = 60
 var IsBuilding = false;
 var cursor = {x:0, y:0};
@@ -197,6 +198,7 @@ function draw(){
         ctx.font = "24px Arial";
         ctx.fillStyle = "white";
         ctx.fillText("hp : " + hp,1,32);
+        ctx.fillText( "score : " + score,1,64);
     }
     
     
